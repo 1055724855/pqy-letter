@@ -27,7 +27,7 @@ button.primary{color:white;background:#b96481;border-color:#b96481}
 .reply{display:none;margin-top:18px;padding:18px 14px;border:1px solid #e9bbc9;background:rgba(255,243,246,.65);border-radius:18px;text-align:center;line-height:2;animation:pop .45s ease}
 .reply.show{display:block}.reply-title{font-size:21px;color:#a34e6d;font-weight:700}.reply-text{font-size:14px;margin-top:12px;text-align:left;line-height:2.05;white-space:pre-line;overflow-wrap:anywhere}.reply[data-kind="hug"] .reply-text{text-align:center}
 .signature{text-align:right;margin:22px 1px 0;font:italic 19px Georgia,serif;color:#8e5971}
-.photo-hint{width:min(100%,440px);text-align:center;margin-top:20px;font-size:13px;color:#674454;text-shadow:0 1px 8px #fff,0 0 12px #fff} .petals{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.petals{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
 .petal{position:absolute;top:-30px;width:11px;height:15px;background:#e9a7ba;border-radius:70% 15% 70% 15%;opacity:.85;animation:fall var(--duration) linear forwards}
 @keyframes pop{from{transform:translateY(9px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes fall{from{transform:translate3d(0,-30px,0) rotate(0)}to{transform:translate3d(var(--drift),105vh,0) rotate(620deg);opacity:0}}
@@ -59,7 +59,6 @@ button.primary{color:white;background:#b96481;border-color:#b96481}
 </div>
 <div class="signature">lt</div>
 </article>
-<div class="photo-hint">继续向上滑动，看看我们喜欢的柯南与小兰 ↓</div>
 </main>
 <div class="petals" id="petals" aria-hidden="true"></div>
 <script>
