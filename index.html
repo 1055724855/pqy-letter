@@ -10,11 +10,11 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;min-height:100%;font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#fff}
-.backdrop{position:fixed;inset:0;z-index:-2;background:#fff url("background.png") center bottom/cover no-repeat}
-.backdrop::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,255,255,.40) 45%,rgba(255,255,255,.1))}
-main{min-height:100svh;min-height:100dvh;padding:calc(27px + env(safe-area-inset-top)) 19px calc(45px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center}
+.backdrop{position:fixed;inset:0;z-index:-2;background:#f9edf1 url("background.png") center center/contain no-repeat}
+.backdrop::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,0) 50%)}
+main{min-height:100svh;min-height:100dvh;padding:calc(27px + env(safe-area-inset-top)) 19px calc(100svh + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center}
 .topline{width:min(100%,440px);text-align:center;font-size:clamp(18px,5vw,25px);font-weight:650;letter-spacing:.03em;color:#674454;text-shadow:0 2px 10px #fff,0 0 20px #fff;margin-bottom:22px}
-.letter{width:min(100%,440px);border-radius:26px;border:1px solid rgba(213,144,167,.58);background:rgba(255,251,252,.90);box-shadow:0 15px 42px rgba(70,37,50,.17);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:27px clamp(19px,5vw,29px) 24px}
+.letter{width:min(100%,440px);border-radius:26px;border:1px solid rgba(213,144,167,.58);background:rgba(255,250,252,.57);box-shadow:0 15px 42px rgba(70,37,50,.17);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);padding:27px clamp(19px,5vw,29px) 24px}
 .kicker{font:11px Georgia,serif;letter-spacing:.19em;color:#aa7185;text-align:center}
 h1{text-align:center;font-family:"Songti SC","STSong","SimSun",serif;font-size:25px;font-weight:600;margin:12px 0 19px}
 .para{font-size:15px;line-height:2.05;letter-spacing:.018em;margin:0 0 17px;text-indent:2em;text-align:left}
@@ -24,15 +24,15 @@ h1{text-align:center;font-family:"Songti SC","STSong","SimSun",serif;font-size:2
 button{font:600 15px inherit;font-family:inherit;cursor:pointer;min-height:47px;border-radius:14px;border:1px solid #ce8da1;background:rgba(255,255,255,.75);color:#a54c6b;padding:10px 8px;transition:transform .2s,background .2s;touch-action:manipulation}
 button:active{transform:scale(.96)}button:focus-visible{outline:3px solid #b96481;outline-offset:3px}
 button.primary{color:white;background:#b96481;border-color:#b96481}
-.reply{display:none;margin-top:18px;padding:18px 14px;border:1px solid #e9bbc9;background:rgba(255,243,246,.95);border-radius:18px;text-align:center;line-height:2;animation:pop .45s ease}
+.reply{display:none;margin-top:18px;padding:18px 14px;border:1px solid #e9bbc9;background:rgba(255,243,246,.65);border-radius:18px;text-align:center;line-height:2;animation:pop .45s ease}
 .reply.show{display:block}.reply-title{font-size:21px;color:#a34e6d;font-weight:700}.reply-text{font-size:14px;margin-top:12px;text-align:left;line-height:2.05;white-space:pre-line;overflow-wrap:anywhere}.reply[data-kind="hug"] .reply-text{text-align:center}
 .signature{text-align:right;margin:22px 1px 0;font:italic 19px Georgia,serif;color:#8e5971}
-.petals{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.photo-hint{width:min(100%,440px);text-align:center;margin-top:20px;font-size:13px;color:#674454;text-shadow:0 1px 8px #fff,0 0 12px #fff} .petals{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
 .petal{position:absolute;top:-30px;width:11px;height:15px;background:#e9a7ba;border-radius:70% 15% 70% 15%;opacity:.85;animation:fall var(--duration) linear forwards}
 @keyframes pop{from{transform:translateY(9px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes fall{from{transform:translate3d(0,-30px,0) rotate(0)}to{transform:translate3d(var(--drift),105vh,0) rotate(620deg);opacity:0}}
 @media(max-width:350px){.para{font-size:14px}.letter{padding:21px 17px}.topline{font-size:17px}}
-@media(min-width:800px){.backdrop{background-size:contain}.letter{background:rgba(255,251,252,.96)}}
+@media(min-width:800px){.backdrop{background-size:contain}.letter{background:rgba(255,251,252,.68)}}
 @media(prefers-reduced-motion:reduce){.petal,.reply{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -59,6 +59,7 @@ button.primary{color:white;background:#b96481;border-color:#b96481}
 </div>
 <div class="signature">lt</div>
 </article>
+<div class="photo-hint">继续向上滑动，看看我们喜欢的柯南与小兰 ↓</div>
 </main>
 <div class="petals" id="petals" aria-hidden="true"></div>
 <script>
